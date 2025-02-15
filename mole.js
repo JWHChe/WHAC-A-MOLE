@@ -1,14 +1,12 @@
 let currMoleTile;
 let currPlantTile;
 let score = 0;
-let gameOver = false;
 let startButton;
 
 const resizeOps = () => {
   // document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
-  document.documentElement.style.setProperty("--dvw", window.innerWidth * 0.01 + "px");
+  document.documentElement.style.setProperty("--vw", window.innerWidth * 0.01 + "px");
 };
-
 resizeOps();
 window.addEventListener("resize", resizeOps);
 
@@ -28,9 +26,6 @@ function setGame() {
     document.getElementById("board").appendChild(tile);
   }
     
-  // const moleCreate = setInterval(setMole, 1000); // 1000 miliseconds = 1 second, every 1 second call setMole
-  // const plantCreate = setInterval(setPlant, 2000); // 2000 miliseconds = 2 seconds, every 2 second call setPla  
-
   startButton = document.createElement("button");
   startButton.id = "reStartButton";
   startButton.innerHTML = "Re-start";
@@ -39,8 +34,7 @@ function setGame() {
   document.getElementById("main").appendChild(startButton);
 }
 
-function getRandomTile() {
-  //math.random --> 0-1 --> (0-1) * 9 = (0-9) --> round down to (0-8) integers
+function getRandomTile() {    //math.random --> 0-1 --> (0-1) * 9 = (0-9) --> round down to (0-8) integers
   let num = Math.floor(Math.random() * 9);
   return num.toString();
 }
@@ -82,7 +76,6 @@ function selectTile() {
   }
   else if (this == currPlantTile) {
       document.getElementById("score").innerText = "GAME OVER: " + score.toString(); //update score html
-      gameOver = true;
       
       startButton.style.visibility = "visible";
       clearInterval(moleCreate);

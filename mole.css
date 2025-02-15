@@ -4,11 +4,12 @@ body {
   /* width: 50vw;
   height: 50vh;
   height: calc(var(--vh, 1vh) * 50); */
-  width: 100dvw;
+  width: 100vw;
   width: calc(var(--dvw, 1vw) * 100);
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   background: url("./mario-bg-960X540.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -28,7 +29,7 @@ body {
 }
 
 #board {
-  width: 30dvw;
+  width: 30vw;
   aspect-ratio: 1;
   /* height: 540px; */
   background-color: green;
@@ -46,7 +47,7 @@ body {
 #board div {  /* board = 540 x 540, divide into 3x3 tiles --> 180 x 180 per div */
   /* width: 180px;
   height: 180px; */
-  width: 10dvw;
+  width: 10vw;
   aspect-ratio: 1;
   background-image: url("./pipe.png");
   background-size: cover;
@@ -55,7 +56,7 @@ body {
 #board div img {     /* all img tags inside tiles */
   /* width: 100px;
   height: 100px; */
-  width: 6dvw;
+  width: 6vw;
   aspect-ratio: 1;
 
   user-select: none;

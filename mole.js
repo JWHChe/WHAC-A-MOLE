@@ -4,6 +4,14 @@ let score = 0;
 let gameOver = false;
 let startButton;
 
+const resizeOps = () => {
+  // document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+  document.documentElement.style.setProperty("--vw", window.innerWidth * 0.01 + "px");
+};
+
+resizeOps();
+window.addEventListener("resize", resizeOps);
+
 const moleCreate = setInterval(setMole, 1000); // 1000 miliseconds = 1 second, every 1 second call setMole
 const plantCreate = setInterval(setPlant, 2000); // 2000 miliseconds = 2 seconds, every 2 second call setPla  
 
